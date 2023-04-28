@@ -9,5 +9,11 @@
         <module name="gestorcsv" />
       </profile>
     </annotationProcessing>
+<<<<<<< HEAD
+=======
+    <bytecodeTargetLevel>
+      <module name="gestorcsv" target="17" />
+    </bytecodeTargetLevel>
+>>>>>>> 055a6ec (Initial Commit)
   </component>
 </project>

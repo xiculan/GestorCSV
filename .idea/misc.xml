@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="ExternalStorageConfigurationManager" enabled="true" />
+=======
+>>>>>>> 055a6ec (Initial Commit)
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/read_file/pom.xml" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/gestorcsv/pom.xml" />
+=======
+>>>>>>> 055a6ec (Initial Commit)
       </list>
     </option>
   </component>
