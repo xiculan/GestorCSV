@@ -483,16 +483,16 @@ public class GestorCSV extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JScrollPane jScrollPane1;
-    private static javax.swing.JRadioButton rButton1;
-    private static javax.swing.JRadioButton rButton10;
-    private static javax.swing.JRadioButton rButton2;
-    private static javax.swing.JRadioButton rButton3;
-    private static javax.swing.JRadioButton rButton4;
-    private static javax.swing.JRadioButton rButton5;
-    private static javax.swing.JRadioButton rButton6;
-    private static javax.swing.JRadioButton rButton7;
-    private static javax.swing.JRadioButton rButton8;
-    private static javax.swing.JRadioButton rButton9;
+    private javax.swing.JRadioButton rButton1;
+    private javax.swing.JRadioButton rButton10;
+    private javax.swing.JRadioButton rButton2;
+    private javax.swing.JRadioButton rButton3;
+    private javax.swing.JRadioButton rButton4;
+    private javax.swing.JRadioButton rButton5;
+    private javax.swing.JRadioButton rButton6;
+    private javax.swing.JRadioButton rButton7;
+    private javax.swing.JRadioButton rButton8;
+    private javax.swing.JRadioButton rButton9;
     private javax.swing.JTextArea textArea;
     private javax.swing.JTextField textField;
     // End of variables declaration//GEN-END:variables
