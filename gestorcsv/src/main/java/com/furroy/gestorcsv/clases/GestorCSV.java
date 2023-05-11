@@ -19,7 +19,13 @@ import java.util.Properties;
 public class GestorCSV extends javax.swing.JFrame {
 
     static Properties prop = new Properties();
-    String rutaIni = "C:"+File.separator+"soft"+File.separator+"GestorCSV"+File.separator+"config"+File.separator+"RutesArxius.ini";
+
+    String sep = File.separator;
+
+    String rutaProjecte = System.getProperty("user.dir");
+
+    String rutaIni = rutaProjecte+sep+"config"+sep+"RutesArxius.ini";
+
     public GestorCSV() {
         initComponents();
         String ruta1 = obtenirArxiuConfig(rutaIni,"ruta_arxiu1", "nom_arxiu1");
