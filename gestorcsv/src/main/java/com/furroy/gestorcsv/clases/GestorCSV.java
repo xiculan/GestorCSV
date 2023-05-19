@@ -19,12 +19,12 @@ import java.util.Properties;
 public class GestorCSV extends javax.swing.JFrame {
 
     static Properties prop = new Properties();
+    
+    String rutaProjecte = System.getProperty("user.dir");
 
     String sep = File.separator;
 
-    String rutaProjecte = System.getProperty("user.dir");
-
-    String rutaIni = rutaProjecte+sep+"config"+sep+"RutesArxius.ini";
+    String rutaIni = new File(rutaProjecte).getParent() + sep + "config" + sep + "RutesArxius.ini";
 
     public GestorCSV() {
         initComponents();
@@ -43,7 +43,7 @@ public class GestorCSV extends javax.swing.JFrame {
 
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                if (checkBoxAutoguardar.isSelected()){
+                if (checkBoxAutoborrar.isSelected()){
                     textArea.setText("");
                 }
                 if(rButton1.isSelected()){
@@ -191,7 +191,7 @@ public class GestorCSV extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         rButton1 = new javax.swing.JRadioButton();
         rButton2 = new javax.swing.JRadioButton();
-        checkBoxAutoguardar = new javax.swing.JCheckBox();
+        checkBoxAutoborrar = new javax.swing.JCheckBox();
         rButton3 = new javax.swing.JRadioButton();
         rButton4 = new javax.swing.JRadioButton();
         rButton5 = new javax.swing.JRadioButton();
@@ -229,7 +229,7 @@ public class GestorCSV extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Stencil", 0, 24)); // NOI18N
-        jLabel1.setText("GESTOR CSV");
+        jLabel1.setText("ARXIUS CSV");
         jLabel1.setToolTipText("");
 
         bGroup.add(rButton1);
@@ -243,16 +243,16 @@ public class GestorCSV extends javax.swing.JFrame {
         bGroup.add(rButton2);
         rButton2.setText("arxiu 2");
 
-        checkBoxAutoguardar.setSelected(true);
-        checkBoxAutoguardar.setText("Autoborrar");
-        checkBoxAutoguardar.addActionListener(new java.awt.event.ActionListener() {
+        checkBoxAutoborrar.setSelected(true);
+        checkBoxAutoborrar.setText("Autoborrar");
+        checkBoxAutoborrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkBoxAutoguardarActionPerformed(evt);
+                checkBoxAutoborrarActionPerformed(evt);
             }
         });
-        checkBoxAutoguardar.addKeyListener(new java.awt.event.KeyAdapter() {
+        checkBoxAutoborrar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                checkBoxAutoguardarKeyPressed(evt);
+                checkBoxAutoborrarKeyPressed(evt);
             }
         });
 
@@ -284,6 +284,11 @@ public class GestorCSV extends javax.swing.JFrame {
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItem1.setText("Autoborrar On/Off");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem1);
 
         jMenuBar1.add(jMenu1);
@@ -353,7 +358,7 @@ public class GestorCSV extends javax.swing.JFrame {
                         .addGap(75, 75, 75)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jButton1)
-                            .addComponent(checkBoxAutoguardar))
+                            .addComponent(checkBoxAutoborrar))
                         .addGap(74, 74, 74))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -383,7 +388,7 @@ public class GestorCSV extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(checkBoxAutoguardar))
+                        .addComponent(checkBoxAutoborrar))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -416,20 +421,22 @@ public class GestorCSV extends javax.swing.JFrame {
         bGroup.clearSelection();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void checkBoxAutoguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxAutoguardarActionPerformed
+    private void checkBoxAutoborrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxAutoborrarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_checkBoxAutoguardarActionPerformed
+    }//GEN-LAST:event_checkBoxAutoborrarActionPerformed
 
-    private void checkBoxAutoguardarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_checkBoxAutoguardarKeyPressed
+    private void checkBoxAutoborrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_checkBoxAutoborrarKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_checkBoxAutoguardarKeyPressed
+    }//GEN-LAST:event_checkBoxAutoborrarKeyPressed
 
     private void rButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rButton1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
+        GestorCSV g2 = new GestorCSV();
+        g2.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
@@ -441,6 +448,14 @@ public class GestorCSV extends javax.swing.JFrame {
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        if (checkBoxAutoborrar.isSelected()){
+            checkBoxAutoborrar.setSelected(false);
+        } else {
+          checkBoxAutoborrar.setSelected(true);
+        }
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -478,7 +493,7 @@ public class GestorCSV extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup bGroup;
     private javax.swing.JButton button;
-    private javax.swing.JCheckBox checkBoxAutoguardar;
+    private javax.swing.JCheckBox checkBoxAutoborrar;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
