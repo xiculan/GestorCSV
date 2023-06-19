@@ -16,7 +16,7 @@ import java.util.Properties;
  *
  * @author ELOY
  */
-public class GestorCSV extends javax.swing.JFrame {
+public class ArxiusCSV extends javax.swing.JFrame {
 
     static Properties prop = new Properties();
     
@@ -26,7 +26,7 @@ public class GestorCSV extends javax.swing.JFrame {
 
     String rutaIni = new File(rutaProjecte).getParent() + sep + "config" + sep + "RutesArxius.ini";
 
-    public GestorCSV() {
+    public ArxiusCSV() {
         initComponents();
         String ruta1 = obtenirArxiuConfig(rutaIni,"ruta_arxiu1", "nom_arxiu1");
         String ruta2 = obtenirArxiuConfig(rutaIni,"ruta_arxiu2", "nom_arxiu2");
@@ -434,7 +434,7 @@ public class GestorCSV extends javax.swing.JFrame {
     }//GEN-LAST:event_rButton1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        GestorCSV g2 = new GestorCSV();
+        ArxiusCSV g2 = new ArxiusCSV();
         g2.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
@@ -474,14 +474,42 @@ public class GestorCSV extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GestorCSV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ArxiusCSV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GestorCSV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ArxiusCSV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GestorCSV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ArxiusCSV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GestorCSV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ArxiusCSV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
