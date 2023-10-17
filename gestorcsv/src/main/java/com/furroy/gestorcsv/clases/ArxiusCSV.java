@@ -97,6 +97,7 @@ public class ArxiusCSV extends javax.swing.JFrame {
 
             while ((line = bufferedReader.readLine()) != null) {
                 if (line.toLowerCase().contains(searchTerm)) {
+                    line = line.replace("\"", "");
                     textArea.append(line + "\n");
                 }
             }
