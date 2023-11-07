@@ -1,1 +1,0 @@
-Tots els codis d'article a l'arxiu filtre.csv coincideixen amb l'arxiu base.csv
