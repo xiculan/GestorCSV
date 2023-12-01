@@ -5,7 +5,7 @@ import com.furroy.gestorcsv.clases.CercaCSV;
 /**
  *
  * @author ELOY
- * @version 8.0.5
+ * @version 8.0.6
  */
 public class AppMain {
     public static void main (String[] args){
