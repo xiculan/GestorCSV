@@ -18,6 +18,7 @@ import javax.swing.Timer;
 /**
  *
  * @author ELOY
+ * 
  */
 public class FiltreCSV extends javax.swing.JFrame {
     // Trobar automàticament la ruta del projecte 
