@@ -18,3 +18,23 @@ Launcher:	C:\Users\eloyc\.jdks\corretto-17.0.9\bin\javaw.exe
 Launcher args:	-jar "C:\Users\eloyc\IdeaProjects\DAM 2\GestorCSV\Executables\GestorCSV_8.0.5.exe"
 Args length:	82/32768 chars
 Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\eloyc\IdeaProjects\DAM 2\GestorCSV\Executables\GestorCSV_8.2.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\eloyc\IdeaProjects\DAM 2\GestorCSV\Executables\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+Substitute:	JAVA_HOME = C:\Users\eloyc\.jdks\openjdk-21.0.1
+Substitute:	PATH = C:\Program Files\Eclipse Adoptium\jdk-21.0.2.13-hotspot\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\eloyc\.jdks\openjdk-21.0.1\bin;C:\Users\eloyc\AppData\Local\Microsoft\WindowsApps;C:\Users\eloyc\AppData\Local\GitHubDesktop\bin;C:\Users\eloyc\AppData\Local\JetBrains\Toolbox\scripts;;C:\Users\eloyc\.jdks\openjdk-21.0.1\bin
+JRE paths:	C:\Users\eloyc\.jdks\openjdk-21.0.1;C:\Program Files\Eclipse Adoptium\jdk-21.0.2.13-hotspot\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\eloyc\.jdks\openjdk-21.0.1\bin;C:\Users\eloyc\AppData\Local\Microsoft\WindowsApps;C:\Users\eloyc\AppData\Local\GitHubDesktop\bin;C:\Users\eloyc\AppData\Local\JetBrains\Toolbox\scripts;;C:\Users\eloyc\.jdks\openjdk-21.0.1\bin
+Check launcher:	C:\Users\eloyc\.jdks\openjdk-21.0.1\bin\javaw.exe (OK)
+Version string: 1.021.000_001 / 64-Bit (OK)
+Launcher:	C:\Users\eloyc\.jdks\openjdk-21.0.1\bin\javaw.exe
+Launcher args:	-jar "C:\Users\eloyc\IdeaProjects\DAM 2\GestorCSV\Executables\GestorCSV_8.2.exe"
+Args length:	80/32768 chars
+Exit code:	0

@@ -272,7 +272,7 @@ public class SepararCSV extends javax.swing.JFrame {
         
         String columna = columTextField.getText().trim();
         String prefijo = prefixTextField.getText().trim();
-        String archivoBase = rutaConf + sep + "base.csv"; // Ruta del archivo base
+        String archivoBase = rutaCSVSeparats + sep + "base.csv"; // Ruta del archivo base
 
         try {
             BufferedReader br = new BufferedReader(new FileReader(archivoBase));

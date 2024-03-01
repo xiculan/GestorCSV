@@ -2,13 +2,13 @@
 <launch4jConfig>
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
-  <jar>C:\Users\eloyc\IdeaProjects\DAM 2\GestorCSV\Executables\GestorCSV_8.0.5.jar</jar>
-  <outfile>C:\Users\eloyc\IdeaProjects\DAM 2\GestorCSV\Executables\GestorCSV_8.0.5.exe</outfile>
-  <errTitle>Error: Install Java</errTitle>
+  <jar>C:\Users\eloyc\IdeaProjects\DAM 2\GestorCSV\Executables\GestorCSV_8.2.jar</jar>
+  <outfile>C:\Users\eloyc\IdeaProjects\DAM 2\GestorCSV\Executables\GestorCSV_8.2.exe</outfile>
+  <errTitle></errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>
   <priority>normal</priority>
-  <downloadUrl>www.java.com/download</downloadUrl>
+  <downloadUrl></downloadUrl>
   <supportUrl></supportUrl>
   <stayAlive>false</stayAlive>
   <restartOnCrash>false</restartOnCrash>
