@@ -28,6 +28,7 @@ public class CercaCSV extends javax.swing.JFrame {
 
     public CercaCSV() {
         initComponents();
+        this.setResizable(false);
         String ruta1 = obtenirArxiuConfig(rutaIni,"ruta_arxiu1", "nom_arxiu1");
         String ruta2 = obtenirArxiuConfig(rutaIni,"ruta_arxiu2", "nom_arxiu2");
         String ruta3 = obtenirArxiuConfig(rutaIni,"ruta_arxiu3", "nom_arxiu3");

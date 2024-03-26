@@ -1,2 +1,0 @@
-Els següents codis d'article no s'han trobat en l'arxiu base.csv:
-TUBO
