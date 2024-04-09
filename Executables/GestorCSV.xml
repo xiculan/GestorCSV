@@ -2,9 +2,9 @@
 <launch4jConfig>
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
-  <jar>C:\Users\eloyc\IdeaProjects\DAM 2\GestorCSV\Executables\GestorCSV_9.2.6.jar</jar>
-  <outfile>C:\Users\eloyc\IdeaProjects\DAM 2\GestorCSV\Executables\GestorCSV_9.2.6.exe</outfile>
-  <errTitle>Please Install Java</errTitle>
+  <jar>C:\Users\eloyc\IdeaProjects\DAM 2\GestorCSV\Executables\GestorCSV_9.4.jar</jar>
+  <outfile>C:\Users\eloyc\IdeaProjects\DAM 2\GestorCSV\Executables\GestorCSV_9.4.exe</outfile>
+  <errTitle>Error: Install Java</errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>
   <priority>normal</priority>

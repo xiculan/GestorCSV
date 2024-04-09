@@ -4,6 +4,8 @@
  */
 package com.furroy.gestorcsv.clases;
 
+import com.furroy.gestorcsv.clases.model.FiltreCSVModel;
+
 import java.awt.Desktop;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -295,12 +297,13 @@ public class FiltreCSV extends javax.swing.JFrame {
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(carpetaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7)
-                    .addComponent(jButton3)
-                    .addComponent(jLabel4))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(carpetaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel7)
+                        .addComponent(jButton3)
+                        .addComponent(jLabel4)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -431,7 +434,6 @@ public class FiltreCSV extends javax.swing.JFrame {
         }
     }
 
-    static File tempFile = new File(rutaConf + "tempFiltre.csv");
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException {
 
         rutaArxius = rutaConf + sep + carpetaProveïdor;
@@ -447,7 +449,7 @@ public class FiltreCSV extends javax.swing.JFrame {
         String outFiltresNotFoundFile = rutaArxius + sep + "out_filtres_notrobat.csv";
         String outBaseNotFoundFile = rutaArxius + sep + "out_base_notrobat.csv";
 
-        crearTempFiltre();
+        FiltreCSVModel.crearTempFiltre(rutaArxius);
 
         String missatge = String.format("Els arxius s'han generat correctament a la carpeta 'config/%s'", carpetaProveïdor);
 
@@ -619,7 +621,7 @@ public class FiltreCSV extends javax.swing.JFrame {
                     // Cercar tots els duplicats
                     for (String baseCode : baseCodes) {
                         if (baseCode.startsWith(filterCode)) {
-                            outWriter.write(getDescriptionByBaseColumn(baseFile, baseCode, columnaBaseSeleccionada));
+                            outWriter.write(FiltreCSVModel.getDescriptionByBaseColumn(baseFile, baseCode, columnaBaseSeleccionada));
                             outWriter.newLine();
                             codeFound = true;
                         }
@@ -628,7 +630,7 @@ public class FiltreCSV extends javax.swing.JFrame {
                     // Cercar només la primera coincidència
                     for (String baseCode : baseCodes) {
                         if (baseCode.startsWith(filterCode)) {
-                            outWriter.write(getDescriptionByBaseColumn(baseFile, baseCode, columnaBaseSeleccionada));
+                            outWriter.write(FiltreCSVModel.getDescriptionByBaseColumn(baseFile, baseCode, columnaBaseSeleccionada));
                             outWriter.newLine();
                             codeFound = true;
                             break; // Sortir del bucle després de trobar la primera coincidència
@@ -668,7 +670,7 @@ public class FiltreCSV extends javax.swing.JFrame {
             while ((filterLine = filterReader.readLine()) != null) {
                 String filterCode = filterLine.split(";")[0].trim();
                 if (baseCodes.contains(filterCode)) {
-                    outWriter.write(getDescriptionByCode(baseFile, filterCode));
+                    outWriter.write(FiltreCSVModel.getDescriptionByCode(baseFile, filterCode));
                     outWriter.newLine();
                 } else {
                     notFoundCodes.add(filterCode);
@@ -748,76 +750,13 @@ public class FiltreCSV extends javax.swing.JFrame {
                 + "\nVerifica que els fitxers 'base' i 'filtre' estiguin creats a la carpeta '" + carpetaProveïdor + "'.");
         infoTextArea.append("Error inesperat");
       }
-
-        // Eliminar el archivo tempFiltre.csv
-        tempFile.delete();
+      FiltreCSVModel.eliminarTempFiltre();
     }
 
-    private String getDescriptionByCode(String baseFile, String code) throws IOException {
-    try (BufferedReader baseReader = new BufferedReader(new FileReader(baseFile))) {
-        String baseLine;
-        while ((baseLine = baseReader.readLine()) != null) {
-            String[] parts = baseLine.split(";");
-            String baseCode = parts[0].trim();
-            if (baseCode.equalsIgnoreCase(code)) {
-                return baseLine;
-            }
-        }
+    public void appendInfoText(String message) {
+        // Código para agregar el texto al área de texto
+        System.out.println(message); // Por ejemplo, aquí imprimiríamos el mensaje en la consola
     }
-        return "";
-    }
-
-    private String getDescriptionByBaseColumn(String baseFile, String code, int columnaBaseSeleccionada) throws IOException {
-        try (BufferedReader baseReader = new BufferedReader(new FileReader(baseFile))) {
-            String baseLine;
-            while ((baseLine = baseReader.readLine()) != null) {
-                String[] parts = baseLine.split(";");
-                if (parts.length > 0) {
-                    // Ajusta la siguiente línea para que coincida con la columna seleccionada
-                    String baseCode = parts[columnaBaseSeleccionada - 1].trim(); // Obtener el código de la columna seleccionada
-                    if (baseCode.equalsIgnoreCase(code)) {
-                        return baseLine;
-                    }
-                }
-            }
-        }
-        return "";
-    }
-
-public static void crearTempFiltre(){
-    String filtreFile = rutaArxius + sep + "Filtre.csv";
-    try {
-        String input = textColumnaFiltre.getText();
-        int columnaSeleccionada = Integer.parseInt(input);
-
-        BufferedReader reader = new BufferedReader(new FileReader(filtreFile));
-
-        // Crear el archivo tempFiltre.csv
-        if (!tempFile.exists()) {
-            tempFile.createNewFile();
-        }
-
-        BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
-
-        String line;
-        while ((line = reader.readLine()) != null) {
-            String[] columns = line.split(";");
-            if (columnaSeleccionada > columns.length) {
-                columnaSeleccionada = columns.length;
-            }
-            // Comprobar si la columna seleccionada existe en la fila actual
-            if (columnaSeleccionada - 1 < columns.length) {
-                writer.write(columns[columnaSeleccionada - 1] + "\n");
-            }
-        }
-
-        reader.close();
-        writer.close();
-
-    } catch (Exception e) {
-        e.printStackTrace();
-    }
-}
 
 
     /**
@@ -855,6 +794,57 @@ public static void crearTempFiltre(){
         });
     }
 
+    public JTextArea getInfoTextArea() {
+        return infoTextArea;
+    }
+
+    public static String getCarpetaProveïdor() {
+        return carpetaProveïdor;
+    }
+
+    public JCheckBox getCheckboxDuplicate() {
+        return checkboxDuplicate;
+    }
+
+    public JComboBox<String> getCarpetaComboBox() {
+        return carpetaComboBox;
+    }
+
+    public JButton getjButton1() {
+        return jButton1;
+    }
+
+    public JButton getjButton2() {
+        return jButton2;
+    }
+
+    public JButton getjButton3() {
+        return jButton3;
+    }
+
+    public JRadioButton getjRadioButton1() {
+        return jRadioButton1;
+    }
+
+    public JRadioButton getjRadioButton2() {
+        return jRadioButton2;
+    }
+
+    public JRadioButton getjRadioButton3() {
+        return jRadioButton3;
+    }
+
+    public JRadioButton getjRadioButton4() {
+        return jRadioButton4;
+    }
+
+    public JTextField getTextColumnaBase() {
+        return textColumnaBase;
+    }
+
+
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup CasosGroup;
     private javax.swing.JComboBox<String> carpetaComboBox;
@@ -885,6 +875,6 @@ public static void crearTempFiltre(){
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField textColumnaBase;
-    private static javax.swing.JTextField textColumnaFiltre;
+    public static javax.swing.JTextField textColumnaFiltre;
     // End of variables declaration//GEN-END:variables
 }
