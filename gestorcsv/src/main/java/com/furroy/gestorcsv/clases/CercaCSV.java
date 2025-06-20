@@ -4,6 +4,8 @@
  */
 package com.furroy.gestorcsv.clases;
 
+import com.furroy.gestorcsv.clases.utils.Constants;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -28,6 +30,7 @@ public class CercaCSV extends javax.swing.JFrame {
 
     public CercaCSV() {
         initComponents();
+        setTitle(Constants.TITLE_APP);
         this.setResizable(false);
         String ruta1 = obtenirArxiuConfig(rutaIni,"ruta_arxiu1", "nom_arxiu1");
         String ruta2 = obtenirArxiuConfig(rutaIni,"ruta_arxiu2", "nom_arxiu2");
@@ -108,7 +111,7 @@ public class CercaCSV extends javax.swing.JFrame {
         }
     }
 
-    public static void cargarNomFitxers(){
+    public void cargarNomFitxers(){
         String nomArxiu1 = "nom_arxiu1";
         String nomArxiu2 = "nom_arxiu2";
         String nomArxiu3 = "nom_arxiu3";
@@ -209,6 +212,7 @@ public class CercaCSV extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -324,6 +328,15 @@ public class CercaCSV extends javax.swing.JFrame {
             }
         });
         jMenu2.add(jMenuItem5);
+
+        jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem6.setText("Convertir caracters CSV");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem6);
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItem4.setText("Sortir");
@@ -474,6 +487,12 @@ public class CercaCSV extends javax.swing.JFrame {
         s2.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        ConvertirCaractersCSV cc2 = new ConvertirCaractersCSV();
+        cc2.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -646,17 +665,18 @@ public class CercaCSV extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JScrollPane jScrollPane1;
-    private static javax.swing.JRadioButton rButton1;
-    private static javax.swing.JRadioButton rButton10;
-    private static javax.swing.JRadioButton rButton2;
-    private static javax.swing.JRadioButton rButton3;
-    private static javax.swing.JRadioButton rButton4;
-    private static javax.swing.JRadioButton rButton5;
-    private static javax.swing.JRadioButton rButton6;
-    private static javax.swing.JRadioButton rButton7;
-    private static javax.swing.JRadioButton rButton8;
-    private static javax.swing.JRadioButton rButton9;
+    private javax.swing.JRadioButton rButton1;
+    private javax.swing.JRadioButton rButton10;
+    private javax.swing.JRadioButton rButton2;
+    private javax.swing.JRadioButton rButton3;
+    private javax.swing.JRadioButton rButton4;
+    private javax.swing.JRadioButton rButton5;
+    private javax.swing.JRadioButton rButton6;
+    private javax.swing.JRadioButton rButton7;
+    private javax.swing.JRadioButton rButton8;
+    private javax.swing.JRadioButton rButton9;
     private javax.swing.JTextArea textArea;
     private javax.swing.JTextField textField;
     // End of variables declaration//GEN-END:variables

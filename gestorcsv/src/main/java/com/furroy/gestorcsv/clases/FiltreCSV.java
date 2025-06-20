@@ -5,6 +5,7 @@
 package com.furroy.gestorcsv.clases;
 
 import com.furroy.gestorcsv.clases.model.FiltreCSVModel;
+import com.furroy.gestorcsv.clases.utils.Constants;
 
 import java.awt.Desktop;
 import java.awt.event.ActionEvent;
@@ -42,6 +43,7 @@ public class FiltreCSV extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        setTitle(Constants.TITLE_APP);
 
         CasosGroup = new javax.swing.ButtonGroup();
         jButton1 = new javax.swing.JButton();
@@ -72,6 +74,7 @@ public class FiltreCSV extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -220,6 +223,15 @@ public class FiltreCSV extends javax.swing.JFrame {
             }
         });
         jMenu2.add(jMenuItem5);
+
+        jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem6.setText("Convertir caracters CSV");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem6);
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItem4.setText("Sortir");
@@ -411,6 +423,12 @@ public class FiltreCSV extends javax.swing.JFrame {
     private void textColumnaBaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textColumnaBaseActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textColumnaBaseActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        ConvertirCaractersCSV cc2 = new ConvertirCaractersCSV();
+        cc2.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void carpetaComboBoxActionPerformed(java.awt.event.ActionEvent evt) {
         int indiceSeleccionado = carpetaComboBox.getSelectedIndex();
@@ -869,6 +887,7 @@ public class FiltreCSV extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
